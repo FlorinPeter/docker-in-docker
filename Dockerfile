@@ -16,9 +16,11 @@ ENV DIND_COMMIT 4e899d64e020a67ca05f913d354aa8d99a341a7b
 
 COPY dockerd-entrypoint.sh /usr/local/bin/
 COPY dind /usr/local/bin/
+COPY docker-login.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/dind \
 	&& chmod +x /usr/local/bin/dockerd-entrypoint.sh \
+	&& chmod +x /usr/local/bin/docker-login.sh \
 	&& chmod 777 /var/run/
 
 VOLUME /var/lib/docker
